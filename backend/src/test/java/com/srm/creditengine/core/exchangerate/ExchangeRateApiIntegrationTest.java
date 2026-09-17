@@ -93,7 +93,7 @@ class ExchangeRateApiIntegrationTest extends AbstractIntegrationTest {
 
     @Test
     void shouldReturnNotFoundWhenThereIsNoCurrentRate() throws Exception {
-        jdbcTemplate.execute("TRUNCATE exchange_rate RESTART IDENTITY");
+        jdbcTemplate.execute("TRUNCATE exchange_rate RESTART IDENTITY CASCADE");
 
         mockMvc.perform(get("/exchange-rates/current").param("currency", "USD"))
                 .andExpect(status().isNotFound())

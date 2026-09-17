@@ -105,7 +105,7 @@ class PricingSimulationApiIntegrationTest extends AbstractIntegrationTest {
 
     @Test
     void shouldReturnUnprocessableContentWhenNoExchangeRateIsAvailable() throws Exception {
-        jdbcTemplate.execute("TRUNCATE exchange_rate RESTART IDENTITY");
+        jdbcTemplate.execute("TRUNCATE exchange_rate RESTART IDENTITY CASCADE");
 
         mockMvc.perform(simulation("""
                         {"receivableType": "TRADE_BILL", "faceValue": 1000.00, "dueDate": "2026-12-14", "paymentCurrency": "USD"}

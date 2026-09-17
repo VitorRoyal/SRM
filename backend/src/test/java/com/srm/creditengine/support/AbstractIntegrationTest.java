@@ -20,8 +20,8 @@ public abstract class AbstractIntegrationTest {
     protected JdbcTemplate jdbcTemplate;
 
     @BeforeEach
-    void resetReferenceRates() {
-        jdbcTemplate.execute("TRUNCATE base_rate, exchange_rate RESTART IDENTITY CASCADE");
+    void resetDatabase() {
+        jdbcTemplate.execute("TRUNCATE settlement, receivable, base_rate, exchange_rate RESTART IDENTITY CASCADE");
         jdbcTemplate.update(
                 "INSERT INTO base_rate (monthly_rate, effective_at) VALUES (0.010000, '2020-01-01T00:00:00Z')"
         );
