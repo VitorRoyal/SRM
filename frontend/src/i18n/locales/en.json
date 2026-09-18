@@ -1,0 +1,151 @@
+{
+  "layout": {
+    "brand": "SRM Credit Engine",
+    "nav": {
+      "operatorPanel": "Operator panel",
+      "settlements": "Settlements",
+      "exchangeRates": "Exchange rates"
+    },
+    "languageLabel": "Language",
+    "languages": {
+      "pt": "Português",
+      "en": "English"
+    }
+  },
+  "common": {
+    "receivableTypes": {
+      "TRADE_BILL": "Trade bill",
+      "POST_DATED_CHECK": "Post-dated check"
+    },
+    "currencies": {
+      "BRL": "Brazilian real (BRL)",
+      "USD": "US dollar (USD)"
+    },
+    "loading": "Loading...",
+    "errors": {
+      "network": "Could not reach the server. Please try again.",
+      "generic": "An unexpected error occurred. Please try again."
+    }
+  },
+  "operatorPanel": {
+    "title": "Operator panel",
+    "subtitle": "Simulate the net value of a receivable and register its settlement.",
+    "form": {
+      "sectionTitle": "Receivable details",
+      "assignor": "Assignor",
+      "assignorPlaceholder": "Select the assignor",
+      "loadingAssignors": "Loading assignors...",
+      "documentNumber": "Document number",
+      "documentNumberPlaceholder": "e.g. DUP-0001",
+      "receivableType": "Receivable type",
+      "faceValue": "Face value (BRL)",
+      "faceValuePlaceholder": "e.g. 100,000.00",
+      "dueDate": "Due date",
+      "paymentCurrency": "Payment currency"
+    },
+    "validation": {
+      "faceValueInvalid": "Please enter a positive amount with up to 2 decimal places",
+      "dueDateInvalid": "Due date must be after today",
+      "formInvalid": "Please fill in all required fields."
+    },
+    "simulation": {
+      "sectionTitle": "Simulation",
+      "empty": "Fill in type, face value and due date to see the simulation.",
+      "calculating": "Calculating...",
+      "presentValue": "Present value (BRL)",
+      "discount": "Discount (BRL)",
+      "paymentAmount": "Amount to pay",
+      "term": "Term",
+      "termValue_one": "{{count}} month",
+      "termValue_other": "{{count}} months",
+      "baseRate": "Monthly base rate",
+      "spread": "Monthly spread",
+      "exchangeRate": "Exchange rate (BRL per unit)",
+      "exchangeRateEffectiveAt": "Effective since"
+    },
+    "lastSettlement": {
+      "title": "Last settlement",
+      "document": "Document {{documentNumber}} from {{assignorName}}",
+      "paid": "{{amount}} paid on {{date}}",
+      "viewStatement": "View statement"
+    },
+    "actions": {
+      "settle": "Settle",
+      "settling": "Settling..."
+    },
+    "service": {
+      "settleSuccess": "Settlement registered successfully!",
+      "settleReplayed": "This settlement had already been registered.",
+      "settleError": "Failed to register the settlement.",
+      "simulationError": "Failed to simulate the receivable.",
+      "assignorsError": "Failed to load assignors."
+    }
+  },
+  "settlements": {
+    "title": "Settlements",
+    "subtitle": "Statement of registered settlements.",
+    "filters": {
+      "settledFrom": "From",
+      "settledTo": "To",
+      "assignor": "Assignor",
+      "allAssignors": "All assignors",
+      "paymentCurrency": "Currency",
+      "allCurrencies": "All currencies",
+      "clear": "Clear filters"
+    },
+    "table": {
+      "settledAt": "Date",
+      "assignor": "Assignor",
+      "receivableType": "Type",
+      "faceValue": "Face value",
+      "term": "Term",
+      "presentValue": "Present value",
+      "discount": "Discount",
+      "paymentAmount": "Paid",
+      "exchangeRate": "FX rate",
+      "termValue_one": "{{count}} month",
+      "termValue_other": "{{count}} months",
+      "empty": "No settlements found."
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageInfo": "Page {{page}} of {{totalPages}}",
+      "totalInfo_one": "{{count}} settlement",
+      "totalInfo_other": "{{count}} settlements",
+      "pageSize": "Per page"
+    },
+    "service": {
+      "fetchSuccess": "Statement updated.",
+      "fetchError": "Failed to load settlements.",
+      "assignorsError": "Failed to load assignors."
+    }
+  },
+  "exchangeRates": {
+    "title": "Exchange rates",
+    "subtitle": "Check the current rate and register a new quote.",
+    "current": {
+      "sectionTitle": "Current rate",
+      "rateValue": "1 {{currency}} = {{rate}} BRL",
+      "effectiveAt": "Effective since {{date}}",
+      "notFound": "No current rate registered."
+    },
+    "form": {
+      "sectionTitle": "New quote",
+      "currency": "Currency",
+      "brlPerUnit": "BRL per unit",
+      "brlPerUnitPlaceholder": "e.g. 5.4321",
+      "hint": "The new rate takes effect immediately and does not change settlements already registered.",
+      "submit": "Register quote",
+      "submitting": "Registering..."
+    },
+    "validation": {
+      "brlPerUnitInvalid": "Please enter a positive value with up to 8 decimal places"
+    },
+    "service": {
+      "fetchError": "Failed to load the current rate.",
+      "registerSuccess": "Quote registered successfully!",
+      "registerError": "Failed to register the quote."
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "layout": {
+    "brand": "SRM Credit Engine",
+    "nav": {
+      "operatorPanel": "Painel do operador",
+      "settlements": "Liquidações",
+      "exchangeRates": "Câmbio"
+    },
+    "languageLabel": "Idioma",
+    "languages": {
+      "pt": "Português",
+      "en": "English"
+    }
+  },
+  "common": {
+    "receivableTypes": {
+      "TRADE_BILL": "Duplicata mercantil",
+      "POST_DATED_CHECK": "Cheque pré-datado"
+    },
+    "currencies": {
+      "BRL": "Real (BRL)",
+      "USD": "Dólar (USD)"
+    },
+    "loading": "Carregando...",
+    "errors": {
+      "network": "Não foi possível conectar ao servidor. Tente novamente.",
+      "generic": "Ocorreu um erro inesperado. Tente novamente."
+    }
+  },
+  "operatorPanel": {
+    "title": "Painel do operador",
+    "subtitle": "Simule o valor líquido de um recebível e registre a liquidação.",
+    "form": {
+      "sectionTitle": "Dados do recebível",
+      "assignor": "Cedente",
+      "assignorPlaceholder": "Selecione o cedente",
+      "loadingAssignors": "Carregando cedentes...",
+      "documentNumber": "Número do documento",
+      "documentNumberPlaceholder": "Ex.: DUP-0001",
+      "receivableType": "Tipo de recebível",
+      "faceValue": "Valor de face (BRL)",
+      "faceValuePlaceholder": "Ex.: 100.000,00",
+      "dueDate": "Vencimento",
+      "paymentCurrency": "Moeda de pagamento"
+    },
+    "validation": {
+      "faceValueInvalid": "Informe um valor positivo com até 2 casas decimais",
+      "dueDateInvalid": "O vencimento deve ser posterior a hoje",
+      "formInvalid": "Preencha todos os campos obrigatórios."
+    },
+    "simulation": {
+      "sectionTitle": "Simulação",
+      "empty": "Preencha tipo, valor de face e vencimento para ver a simulação.",
+      "calculating": "Calculando...",
+      "presentValue": "Valor presente (BRL)",
+      "discount": "Deságio (BRL)",
+      "paymentAmount": "Valor a pagar",
+      "term": "Prazo",
+      "termValue_one": "{{count}} mês",
+      "termValue_other": "{{count}} meses",
+      "baseRate": "Taxa base a.m.",
+      "spread": "Spread a.m.",
+      "exchangeRate": "Câmbio (BRL por unidade)",
+      "exchangeRateEffectiveAt": "Vigente desde"
+    },
+    "lastSettlement": {
+      "title": "Última liquidação",
+      "document": "Documento {{documentNumber}} de {{assignorName}}",
+      "paid": "{{amount}} pagos em {{date}}",
+      "viewStatement": "Ver extrato"
+    },
+    "actions": {
+      "settle": "Liquidar",
+      "settling": "Liquidando..."
+    },
+    "service": {
+      "settleSuccess": "Liquidação registrada com sucesso!",
+      "settleReplayed": "Esta liquidação já havia sido registrada.",
+      "settleError": "Erro ao registrar a liquidação.",
+      "simulationError": "Erro ao simular o recebível.",
+      "assignorsError": "Erro ao carregar os cedentes."
+    }
+  },
+  "settlements": {
+    "title": "Liquidações",
+    "subtitle": "Extrato das liquidações registradas.",
+    "filters": {
+      "settledFrom": "De",
+      "settledTo": "Até",
+      "assignor": "Cedente",
+      "allAssignors": "Todos os cedentes",
+      "paymentCurrency": "Moeda",
+      "allCurrencies": "Todas as moedas",
+      "clear": "Limpar filtros"
+    },
+    "table": {
+      "settledAt": "Data",
+      "assignor": "Cedente",
+      "receivableType": "Tipo",
+      "faceValue": "Valor de face",
+      "term": "Prazo",
+      "presentValue": "Valor presente",
+      "discount": "Deságio",
+      "paymentAmount": "Pago",
+      "exchangeRate": "Câmbio",
+      "termValue_one": "{{count}} mês",
+      "termValue_other": "{{count}} meses",
+      "empty": "Nenhuma liquidação encontrada."
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Próxima",
+      "pageInfo": "Página {{page}} de {{totalPages}}",
+      "totalInfo_one": "{{count}} liquidação",
+      "totalInfo_other": "{{count}} liquidações",
+      "pageSize": "Por página"
+    },
+    "service": {
+      "fetchSuccess": "Extrato atualizado.",
+      "fetchError": "Erro ao carregar as liquidações.",
+      "assignorsError": "Erro ao carregar os cedentes."
+    }
+  },
+  "exchangeRates": {
+    "title": "Câmbio",
+    "subtitle": "Consulte a taxa vigente e registre uma nova cotação.",
+    "current": {
+      "sectionTitle": "Taxa vigente",
+      "rateValue": "1 {{currency}} = {{rate}} BRL",
+      "effectiveAt": "Vigente desde {{date}}",
+      "notFound": "Nenhuma taxa vigente cadastrada."
+    },
+    "form": {
+      "sectionTitle": "Nova cotação",
+      "currency": "Moeda",
+      "brlPerUnit": "BRL por unidade",
+      "brlPerUnitPlaceholder": "Ex.: 5,4321",
+      "hint": "A nova taxa passa a valer imediatamente e não altera liquidações já registradas.",
+      "submit": "Registrar cotação",
+      "submitting": "Registrando..."
+    },
+    "validation": {
+      "brlPerUnitInvalid": "Informe um valor positivo com até 8 casas decimais"
+    },
+    "service": {
+      "fetchError": "Erro ao carregar a taxa vigente.",
+      "registerSuccess": "Cotação registrada com sucesso!",
+      "registerError": "Erro ao registrar a cotação."
+    }
+  }
+}
